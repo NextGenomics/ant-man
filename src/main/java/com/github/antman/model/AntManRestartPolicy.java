@@ -27,7 +27,7 @@ public enum  AntManRestartPolicy {
     /**
      *
      */
-    public RestartPolicy policy;
+    private RestartPolicy policy;
 
     /**
      *
@@ -39,7 +39,7 @@ public enum  AntManRestartPolicy {
      * @param policy
      * @param maxTimeLimit
      */
-    AntManRestartPolicy(int maxTimeLimit){
+    AntManRestartPolicy(int maxTimeLimit) {
         this.policy = RestartPolicy.onFailureRestart(maxTimeLimit);
         this.maxTimeLimit = maxTimeLimit;
     }
@@ -48,9 +48,16 @@ public enum  AntManRestartPolicy {
      *
      * @param policy
      */
-    AntManRestartPolicy(RestartPolicy policy){
+    AntManRestartPolicy(RestartPolicy policy) {
         this.policy = policy;
     }
 
 
+    /**
+     *
+     * @return
+     */
+    public RestartPolicy getPolicy() {
+        return policy;
+    }
 }

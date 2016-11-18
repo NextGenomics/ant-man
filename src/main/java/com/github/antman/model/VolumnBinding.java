@@ -18,7 +18,7 @@ public class VolumnBinding {
 
         private String targetPath;
 
-        public Binding(String sourcePath, String targetPath){
+        public Binding(String sourcePath, String targetPath) {
             this.sourcePath = sourcePath;
             this.targetPath = targetPath;
         }
@@ -42,7 +42,7 @@ public class VolumnBinding {
 
     private List<Binding> bindings;
 
-    public VolumnBinding(){
+    public VolumnBinding() {
         this.bindings = new ArrayList<>();
     }
 
@@ -51,7 +51,7 @@ public class VolumnBinding {
      * @param binding
      * @return
      */
-    public VolumnBinding add(Binding binding){
+    public VolumnBinding add(Binding binding) {
         this.bindings.add(binding);
         return this;
     }
@@ -62,7 +62,7 @@ public class VolumnBinding {
      * @param targetPath
      * @return
      */
-    public VolumnBinding add(String sourcePath, String targetPath){
+    public VolumnBinding add(String sourcePath, String targetPath) {
         this.bindings.add(new Binding(sourcePath, targetPath));
         return this;
     }
@@ -71,7 +71,7 @@ public class VolumnBinding {
      *
      * @return
      */
-    public List<Bind> constructDockerBindings(){
+    public List<Bind> constructDockerBindings() {
         List<Bind> dockerBinds = new ArrayList<>();
         bindings.forEach(binding -> dockerBinds.add(new Bind(binding.getSourcePath(),
                 new Volume(binding.getTargetPath()))));

@@ -1,4 +1,4 @@
-package com.github.antman.Utils;
+package com.github.antman.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class AntManUtils {
      * @param port
      * @return
      */
-    public static String getDockerHost(String ipAddr, String port){
+    public static String getDockerHost(String ipAddr, String port) {
         return "tcp://" + ipAddr + ":" + port;
     }
 
@@ -25,7 +25,7 @@ public class AntManUtils {
      * @param envVars
      * @return
      */
-    public static List<String> constructEnvVars(Map<String, String> envVars){
+    public static List<String> constructEnvVars(Map<String, String> envVars) {
         List<String> envVarList = new ArrayList<>();
         //可以考虑Java8的Stream
         if (envVars != null && !envVars.isEmpty()) {
@@ -39,7 +39,7 @@ public class AntManUtils {
      * @param cpus
      * @return
      */
-    public static String constructCpuBindings(String[] cpus){
+    public static String constructCpuBindings(String[] cpus) {
         if (cpus == null || cpus.length == 0) {
             return "";
         } else {

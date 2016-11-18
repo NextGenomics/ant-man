@@ -1,7 +1,5 @@
 package com.github.antman.model;
 
-import com.github.dockerjava.api.model.Bind;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +41,7 @@ public class BatchJob {
      * @param imageName
      * @param cmdline
      */
-    public BatchJob(String imageName, List<String> cmdline){
+    public BatchJob(String imageName, List<String> cmdline) {
         this.imageName = imageName;
         this.cmdline = cmdline;
     }
@@ -53,7 +51,7 @@ public class BatchJob {
      * @param imageName
      * @param cmdline
      */
-    public BatchJob(String imageName, String ... cmdline){
+    public BatchJob(String imageName, String ... cmdline) {
         this.imageName = imageName;
         this.cmdline = Arrays.asList(cmdline);
     }
